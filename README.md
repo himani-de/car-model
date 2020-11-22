@@ -1,4 +1,3 @@
-![CI](https://github.com/himani-de/car-model/workflows/CI/badge.svg?branch=main&event=push
 ## Car Price Prediction model
 #### Table of Contents
 1. [Overview](#Overview)
