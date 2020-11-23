@@ -17,12 +17,10 @@
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-      <input type = "text" name = "Engine Fuel Type" placeholder = "Engine Fuel Type" required = "required" />
+      <input type = "text" name = "Make" placeholder = "Make" required = "required" />
       <input type = "text" name = "Engine HP" placeholder = "Engine HP" required = "required" />
       <input type = "text" name = "Engine Cylinders" placeholder = "Engine Cylinders" required = "required" />
-      <input type = "text" name = "Transmission Type" placeholder = "Transmission Type" required = "required" />
-      <input type = "text" name = "Driven_Wheels" placeholder = "Driven_Wheels" required = "required" />
-
+      <input type = "text" name = "Year" placeholder = "Year" required = "required" />
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
