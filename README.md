@@ -8,12 +8,11 @@
 5. [License](#License)
 
 #### Overview
-This car price prediction model uses sklearn LinearRegression model to predict car price based upon following inputs from user.
-- Engine Fuel Type
+This car price prediction model predicts car price($) based upon following inputs from user.
+- Make
 - Engine HP
 - Engine Cylinders
-- Transmission Type
-- Driven_Wheels
+- Year
 
 ![Screenshot](https://github.com/himani-de/car-model/blob/main/images/car_price_app_screenshot.PNG)
 
@@ -27,7 +26,7 @@ This car price prediction model uses sklearn LinearRegression model to predict c
 
 ###### Local Deployment
 
-In order to build this environment locally please update your docker-compose.yml file locally as follows:
+In order to build this environment locally please update the docker-compose.yml file locally as follows:
 
 ```
 version: "3.8"
@@ -54,8 +53,7 @@ This code has been tested on following operating systems.
  * Windows 10
 
 This code has been tested on following Python Versions.
-* Python 3.6
-* Python 3.7.3
+* Python 3.8.3
 
 ### License
 
