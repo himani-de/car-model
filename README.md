@@ -51,9 +51,9 @@ This use github-actions to build & deploy to a google compute engine just fork t
 This code has been tested on following operating systems.
  * Ubuntu 18.04
  * Windows 10
+ * MacOS 10.2
 
 This code has been tested on following Python Versions.
-
 * Python 3.8.3
 
 ### License

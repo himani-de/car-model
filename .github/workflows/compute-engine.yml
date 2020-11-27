@@ -33,8 +33,8 @@ jobs:
 
       - name: Pull image
         run: |
-          gcloud compute ssh --zone $GCE_INSTANCE_ZONE $GCE_INSTANCE --command 'docker pull eu.gcr.io/${{ secrets.GCP_PROJECT_ID }}/carpricepred:latest'
+          gcloud compute ssh  $GCE_INSTANCE --zone $GCE_INSTANCE_ZONE  --command 'docker pull eu.gcr.io/${{ secrets.GCP_PROJECT_ID }}/carpricepred:latest'
 
       - name: Deploy image
         run: |
-          gcloud compute ssh --zone $GCE_INSTANCE_ZONE $GCE_INSTANCE --command 'docker tag eu.gcr.io/${{ secrets.GCP_PROJECT_ID }}/carpricepred:latest carpricepred:latest  && docker-compose up -d'
+          gcloud compute ssh $GCE_INSTANCE --zone $GCE_INSTANCE_ZONE  --command 'docker tag eu.gcr.io/${{ secrets.GCP_PROJECT_ID }}/carpricepred:latest carpricepred:latest  && docker-compose up -d'
