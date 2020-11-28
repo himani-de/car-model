@@ -11,14 +11,17 @@ WORKDIR /workspace
 ##COPYING THE requirement.txt which contains the required package##
 COPY requirement.txt /workspace
 
+##Update the PIP Library
+RUN pip install --upgrade pip
+
 ##Installing the required packages ##
 RUN pip install -r requirement.txt
 
-##COPY the app.py in the image##
-COPY app.py /workspace
+##COPY the app_linear_regression.py in the image##
+COPY app_linear_regression.py /workspace
 
-##COPY the model_latest_rfc.pkl in the image##
-COPY  model_latest_rfc.pkl  /workspace
+##COPY the linear_regression_model.pkl in the image##
+COPY  linear_regression_model.pkl  /workspace
 
 ##CREATING templates DIR ##
 RUN mkdir -p /workspace/templates
@@ -37,4 +40,4 @@ ADD  static  /workspace/static
 EXPOSE 9090
 
 ##RUNNING THE PYTHON CODE ON CONTAINER START##
-CMD ["python","app.py"]
+CMD ["python","app_linear_regression.py"]
