@@ -31,10 +31,15 @@ jobs:
         run: |
           docker push eu.gcr.io/${{ secrets.GCP_PROJECT_ID }}/carpricepred:latest
 
-      - name: Deploy
-        run: |-
-          gcloud compute instances update-container "$GCE_INSTANCE" \
-          --zone "$GCE_INSTANCE_ZONE" \
-          --container-image "eu.gcr.io/${{ secrets.GCP_PROJECT_ID }}/carpricepred:latest"
 
-    
+      - name: Configure docker to pull from gcr On VM
+        run: |
+          gcloud compute ssh --zone=$GCE_INSTANCE_ZONE $GCE_INSTANCE --command 'gcloud auth configure-docker'
+
+      - name: Pull image
+        run: |
+          gcloud compute ssh $GCE_INSTANCE --zone $GCE_INSTANCE_ZONE  --command 'docker pull eu.gcr.io/${{ secrets.GCP_PROJECT_ID }}/carpricepred:latest'
+
+      - name: Deploy image
+        run: |
+          gcloud compute ssh $GCE_INSTANCE --zone $GCE_INSTANCE_ZONE  --command 'docker tag eu.gcr.io/${{ secrets.GCP_PROJECT_ID }}/carpricepred:latest carpricepred:latest  && docker-compose up -d'
