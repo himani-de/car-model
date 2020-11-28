@@ -24,6 +24,8 @@ This Heart disease Prediction model predicts the patient is suffering from heart
 
 -  The requirement for this  project  requires docker and docker-compose installed in your local workstation in order to run locally.
 
+
+
 #### Usage
 
 ###### Local Deployment
@@ -43,12 +45,15 @@ docker-compose -f heart-disease-predict-docker-compose.yml up -d
 ### Limitation
 
 This code has been tested on following operating systems.
- * Ubuntu 18.04
+ * Centos 7
  * Windows 10
  * MacOS 10.2
 
-This code has been tested on following Python Versions.
+This code has been tested on following Versions.
 * Python 3.8.3
+* docker 1.13.1
+* docker-compose 1.27.4
+
 
 ### License
 
