@@ -19,5 +19,8 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
 
-      - name: Echo Hello VM
-        run: gcloud compute ssh --zone $GCE_INSTANCE_ZONE ${{ secrets.GCP_SA_EMAIL }}@$GCE_INSTANCE --command 'echo "Hello World"'
+      - name: Deploy
+        run: |-
+          gcloud compute instances update-container "$GCE_INSTANCE" \
+            --zone "$GCE_INSTANCE_ZONE" \
+            --container-image "eu.gcr.io/${{ secrets.GCP_PROJECT_ID }}/carpricepred:latest"
