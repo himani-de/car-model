@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+ app:
+   image: "heart-disease-predection:latest"
+   container_name: heart-disease-predection
+   hostname: heart-disease.predict.com
+   ports:
+     - "8080:8080"

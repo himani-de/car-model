@@ -1,4 +1,4 @@
-![deploy-car model](https://github.com/himani-de/car-model/workflows/deploy-car%20model/badge.svg)
+![car-price-prediction-build](https://github.com/himani-de/car-model/workflows/car-price-prediction-build/badge.svg)
 ## Car Price Prediction model
 #### Table of Contents
 1. [Overview](#Overview)
