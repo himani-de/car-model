@@ -1,8 +1,7 @@
 version: "3.8"
 services:
- app:
-   image: "carpricepred:latest"
-   container_name: carpricepred
-   hostname: carprice.predict.com
+ application1:
+   build: .
+   container_name: car-price-prediction
    ports:
      - "9090:9090"

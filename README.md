@@ -1,5 +1,4 @@
-![car-price-prediction-build](https://github.com/himani-de/car-model/workflows/car-price-prediction-build/badge.svg)
-## Car Price Prediction model
+## Car Price Prediction AND Heart disease Prediction Model
 #### Table of Contents
 1. [Overview](#Overview)
 2. [Prerequisites](#Prerequisites)
@@ -14,37 +13,32 @@ This car price prediction model predicts car price($) based upon following input
 - Engine Cylinders
 - Year
 
-![Screenshot](https://github.com/himani-de/car-model/blob/main/images/car_price_app_screenshot.PNG)
-
+This Heart disease Prediction model predicts the patient is suffering from heart disease or not based upon following inputs.
+- cholestrol
+- oldpeak
+- Constrictive pericarditis
+- Coronary artery
+- Thalassemia
 
 #### Prerequisites
 
 -  The requirement for this  project  requires docker and docker-compose installed in your local workstation in order to run locally.
 
-
 #### Usage
 
 ###### Local Deployment
 
-In order to build this environment locally please update the docker-compose.yml file locally as follows:
+In order to predict the car price run the following command.
 
 ```
-version: "3.8"
-services:
- application:
-   build: .
-   container_name: car-price-prediction
-   ports:
-     - "9090:9090"  
+docker-compose up -d
 ```
 
-###### Cloud Deployment on Google compute engine using Github-Actions
-This use github-actions to build & deploy to a google compute engine just fork this repo and add the following environment variables in your  repo.
-- GCP_SA_EMAIL
-- GCP_SA_KEY
-- GCP_PROJECT_ID
-- GCE_INSTANCE_ZONE
-- GCE_INSTANCE
+In order to predict the Heart disease run the following command.
+
+```
+docker-compose -f heart-disease-predict-docker-compose.yml up -d
+```
 
 ### Limitation
 
